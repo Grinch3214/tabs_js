@@ -1,0 +1,238 @@
+@import "fonts";
+@import "reset";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.container {
+	max-width: 700px;
+    margin: 35px auto 0;
+	padding: 20px;
+}
+
+// Tabs
+.tabs {
+	&__btns {
+		display: flex;
+		width: 100%;
+    }
+	&__btn {
+        font-family: inherit;
+        font-weight: 600;
+		flex: 1 1 100%;
+		background-color: rgb(0, 109, 45);
+		border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+		padding: 8px;
+		position: relative;
+        color: #fff;
+		cursor: pointer;
+		outline: none;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 2px;
+			width: 100%;
+			background-color: rgb(154, 255, 134);
+			transform: scaleX(0);
+			transform-origin: center;
+			transition: transform .2s ease;
+        }
+		&.is-active {
+            background-color: rgb(56, 185, 110);
+			cursor: default;
+			&:after {
+				transform: scaleX(1);
+            }
+        }
+		+ .tabs__btn {
+			margin-left: 2px;
+        }
+    }
+	&__content {
+		margin-top: 2px;
+    }
+	&__item {
+		padding: 15px 10px 40px 30px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 1px 1px 4px 1px rgba(34, 60, 80, 0.2);
+		display: none;
+        min-height: 500px;
+        height: 100%;
+		&.is-active {
+			display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+    &__item-title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &__item-product {
+        padding-top: 15px;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto;
+        img {
+            width: 100%;
+        }
+    }
+}
+// Price fo tab-1
+.more {
+    &__price {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__price-price {
+        font-weight: 600;
+        span {
+            font-weight: 400;
+            color: #8f8f8f;
+        }
+    }
+
+    &__price-input--btn {
+        border: none;
+        outline: none;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 15px;
+            height: 3px;
+            background: #8f8f8f;
+        }
+    }
+
+    &__price-input--input {
+        max-width: 23px;
+        border: none;
+        border-bottom: 2px solid #8f8f8f;
+        text-align: center;
+        appearance: none;
+    }
+    &__sum {
+        font-weight: 600;
+        span {
+            font-weight: 400;
+            color: #8f8f8f;
+        }
+    }
+}
+
+#add_product {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: 3px;
+        height: 15px;
+        background: #8f8f8f;
+    }
+}
+
+
+// Tab-2 Forms
+
+.tabs {
+    &__field {
+        position: relative;
+    }
+
+    &__field-input {
+        padding: 25px 10px 6px;
+        font-size: 18px;
+        line-height: 1.25;
+        margin-top: 28px;
+        width: 80%;
+        border: none;
+        border-bottom: 2px solid #8f8f8f;
+        transition: .4s ease;
+        background-color: #f5f5f5;
+        transition: color .15s ease-in-out, transform .15s ease-in-out;
+        &::placeholder {
+            color: transparent;
+        }
+        &:not(:placeholder-shown) {
+            outline: none;
+            border-bottom: 2px solid #03a9f4;
+        }
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid #03a9f4;
+            & ~ .tabs__field-label {
+                transform: scale(.85) translateY(-1.25rem);
+                color: #03a9f4;
+            }
+        }
+        &:not(:placeholder-shown)~.tabs__field-label {
+            transform: scale(.85) translateY(-1.25rem);
+            color: #03a9f4;
+        }
+    }
+
+    &__field-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        padding: 30px 8px 10px;
+        color: #8f8f8f;
+    }
+}
+
+// Tabs-3
+
+.tabs {
+    &__item-flex {
+        display: flex;
+    }
+    &__item-inner {
+        flex: 1 1 50%;
+        padding: 40px 0 0 15px;
+    }
+    &__item-image {
+        max-width: 200px;
+        height: auto;
+        padding-top: 40px;
+        img {
+            width: 100%;
+        }
+    }
+    &__item-list {
+        padding: 10px 0;
+    }
+    &__item-item {
+        padding: 10px 0;
+        font-weight: 600;
+        span {
+            font-weight: 400;
+            color: #8f8f8f;
+        }
+    }
+    &__item-box {
+        font-weight: 600;
+        p {
+            padding-top: 20px;
+        }
+        p span {
+            font-weight: 400;
+            color: #8f8f8f;
+        }
+    }
+}

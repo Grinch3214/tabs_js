@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Card</title>
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+	<div class="container">
+	
+		<div class="tabs">
+			
+			<div class="tabs__btns">
+				<button class="tabs__btn is-active">Product</button>
+				<button class="tabs__btn">Contacts</button>
+				<button class="tabs__btn">Info</button>
+			</div>
+			
+			<div class="tabs__content">
+				<div class="tabs__item is-active">
+					<h2 id="name_title" class="tabs__item-title">Планшет Lenovo Tab P11 LTE 6/128GB</h2>
+					<div class="tabs__item-product">
+						<img src="./images/img_1.jpg" alt="notebook" id="product">
+					</div>
+					<div class="tabs__item-more">
+						<div class="more__price">
+							<p class="more__price-price">Price: <span>8000 грн.</span></p>
+							<div class="more__price-input">
+								<button class="more__price-input--btn" id="delete_product">-</button>
+								<input class="more__price-input--input" type="number" value="1" disabled>
+								<button class="more__price-input--btn" id="add_product">-</button>
+							</div>
+						</div>
+						<hr>
+						<div class="more__sum">
+							Product sum: <span id="product_sum">8000</span><span> грн.</span>
+						</div>
+					</div>
+				</div>
+				<div class="tabs__item">
+					<div>
+						<h2 class="tabs__item-title">Shipping form</h2>
+						<div class="tabs__form">
+							<div class="tabs__field">
+								<input id="name" type="text" class="tabs__field-input" placeholder="Name">
+								<label for="name" class="tabs__field-label">Name</label>
+							</div>
+							<div class="tabs__field">
+								<input id="surname" type="text" class="tabs__field-input" placeholder="Surname">
+								<label for="surname" class="tabs__field-label">Surname</label>
+							</div>
+							<div class="tabs__field">
+								<input id="email" type="email" class="tabs__field-input" placeholder="Email">
+								<label for="email" class="tabs__field-label">Email</label>
+							</div>
+							<div class="tabs__field">
+								<input id="phone" type="number" class="tabs__field-input" placeholder="Phone">
+								<label for="phone" class="tabs__field-label">Phone</label>
+							</div>
+							<div class="tabs__field">
+								<input id="adress" type="text" class="tabs__field-input" placeholder="Adress">
+								<label for="adress" class="tabs__field-label">Adress</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs__item">
+					<div class="tabs__item-flex">
+						<div class="tabs__item-inner">
+							<h2 class="tabs__item-title">Product Info</h2>
+							<div class="tabs__item-image"></div>
+							<div class="tabs__item-box">
+								<p>Name: <span id="name_info"></span></p>
+								<p>Quantily: <span id="quantily_info">1</span></p>
+								<p>Purchase amount: <span id="amount_info">8000</span></p>
+							</div>
+						</div>
+
+						<div class="tabs__item-inner">
+							<h2 class="tabs__item-title">Contacts Info</h2>
+							<ul class="tabs__item-list">
+								<li class="tabs__item-item">Name: <span id="result_name"></span></li>
+								<li class="tabs__item-item">Surname: <span id="result_surname"></span></li>
+								<li class="tabs__item-item">Email: <span id="result_email"></span></li>
+								<li class="tabs__item-item">Phone: <span id="result_phone"></span></li>
+								<li class="tabs__item-item">Adress: <span id="result_adress"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
