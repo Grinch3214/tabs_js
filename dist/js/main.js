@@ -57,16 +57,13 @@ deleteProduct.addEventListener('click', function() {
 });
 
 
-const form = document.querySelector('.tabs__form')
-    .addEventListener('input', event => {
-        if (event.target.className === 'tabs__field-input') {
-            let itemsList = document.querySelectorAll('.tabs__item-item span');
-            let tabsForm = document.querySelector('.tabs__form').elements;
+const form = document.querySelector('.tabs__form');
 
-            itemsList[0].innerText = tabsForm[0].value;
-            itemsList[1].innerText = tabsForm[1].value;
-            itemsList[2].innerText = tabsForm[2].value;
-            itemsList[3].innerText = tabsForm[3].value;
-            itemsList[4].innerText = tabsForm[4].value;
-        }
-    });
+form.addEventListener('input', event => {
+    let inp = event.target
+    if (inp.className === 'tabs__field-input') {
+        const { index } = inp.dataset
+        const container = document.querySelector(`[data-value="${index}"]`);
+        container.innerText = inp.value
+    }
+});
