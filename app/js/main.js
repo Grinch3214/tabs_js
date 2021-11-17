@@ -56,27 +56,17 @@ deleteProduct.addEventListener('click', function() {
     }
 });
 
-let inputName = document.getElementById('name');
-inputName.oninput = function() {
-    document.getElementById('result_name').innerText = inputName.value;
-}
 
-let inputSurname = document.getElementById('surname');
-inputSurname.oninput = function() {
-    document.getElementById('result_surname').innerText = inputSurname.value;
-}
+const form = document.querySelector('.tabs__form')
+    .addEventListener('input', event => {
+        if (event.target.className === 'tabs__field-input') {
+            let itemsList = document.querySelectorAll('.tabs__item-item span');
+            let tabsForm = document.querySelector('.tabs__form').elements;
 
-let inputEmail = document.getElementById('email');
-inputEmail.oninput = function() {
-    document.getElementById('result_email').innerText = inputEmail.value;
-}
-
-let inputPhone = document.getElementById('phone');
-inputPhone.oninput = function() {
-    document.getElementById('result_phone').innerText = inputPhone.value;
-}
-
-let inputAdress = document.getElementById('adress');
-inputAdress.oninput = function() {
-    document.getElementById('result_adress').innerText = inputAdress.value;
-}
+            itemsList[0].innerText = tabsForm[0].value;
+            itemsList[1].innerText = tabsForm[1].value;
+            itemsList[2].innerText = tabsForm[2].value;
+            itemsList[3].innerText = tabsForm[3].value;
+            itemsList[4].innerText = tabsForm[4].value;
+        }
+    });
